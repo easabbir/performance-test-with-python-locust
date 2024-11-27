@@ -1,7 +1,7 @@
 # performance-test-with-python-locust-user-managed-csv-file
 This project is done to do performance testing with couple of api in locust and user is provided with csv file using python as a language.
 
-## Prerequisites set up:
+## Prerequisites and set-up:
 To run a Locust performance testing project, you’ll need to ensure you have the following prerequisites set up:
 
     1. Python Installation: Locust is a Python-based tool, Python (version 3.7 or later).
@@ -9,10 +9,11 @@ To run a Locust performance testing project, you’ll need to ensure you have th
     3. Install Additional Packages (if needed): pip install requests
 
 
-## locust launch & start the project
-To run Locust, navigate to the project directory and run locust and then 
+## How to run the project
+Step-1: To run Locust, navigate to the project directory and execute locust command as shown in below section
 
-open a browser and go to http://localhost:8089 to access the Locust web interface, where you can start and control the test.
+
+Step-2: Open a browser and go to http://localhost:8089 to access the Locust web interface, where you can start and control the test.
 
     1. cmd/bash -> locust -r 10 -u 3 --host=base_url
     2. go to browsers url -> http://localhost:8089/ -> start/advance options to add test duration 
@@ -20,7 +21,7 @@ open a browser and go to http://localhost:8089 to access the Locust web interfac
     4. Explore the UI to see the results and charts as shown below.
 
 
-### Run command Explanation:
+### locust command Explanation:
 
 For Example:
 
