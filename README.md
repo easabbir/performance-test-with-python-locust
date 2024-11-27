@@ -90,7 +90,9 @@ https://youtu.be/DcTwbkUAiTo
 ---
 
 ### Running in docker
-docker-compose up --scale worker=3
-
+    1. terminal/cmd/bash -> docker-compose up --scale worker=3
+    2. go to browsers url -> http://localhost:8089/ -> start/advance options to add test duration 
+    3. Click start.
+    4. Explore the UI to see the results and charts as shown below.
 ---
 
