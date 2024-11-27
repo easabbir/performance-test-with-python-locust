@@ -8,6 +8,7 @@ To run a Locust performance testing project, you’ll need to ensure you have th
     2. Install Locust: pip install locust -> verify installation: locust --version.
     3. Install Additional Packages (if needed): pip install requests
 
+---
 
 ## How to run the project
 Step-1: To run Locust, navigate to the project directory and execute locust command as shown in below section
@@ -20,6 +21,7 @@ Step-2: Open a browser and go to http://localhost:8089 to access the Locust web 
     3. Click start.
     4. Explore the UI to see the results and charts as shown below.
 
+---
 
 ### locust command Explanation:
 
@@ -34,6 +36,8 @@ For Example:
 In this example, it's set to 10.
 
 `-u: The total number of users to simulate during the test. In this example, it's set to 100`
+
+---
 
 ### Tasks
 
