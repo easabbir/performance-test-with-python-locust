@@ -10,7 +10,7 @@ services:
       - "8089:8089"         # Expose Locust web interface
     command: >
       sh -c "pip install --no-cache-dir locust requests &&
-              locust -f locustfile.py --master"
+              locust -f locustfile.py --master --host=base_url"
     depends_on:
       - worker
 
@@ -21,4 +21,4 @@ services:
       - .:/app              # Mount your project directory into the container
     command: >
       sh -c "pip install --no-cache-dir locust requests &&
-              locust -f locustfile.py --worker --master-host=master"
+              locust -f locustfile.py --worker --master-host=master --host=base_url"
