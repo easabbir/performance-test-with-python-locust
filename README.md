@@ -24,7 +24,6 @@ Step-2: Open a browser and go to http://localhost:8089 to access the Locust web 
 ---
 
 ### locust command Explanation:
-
 For Example:
 
 `locust -r 10 -u 100 --host=base_url`
@@ -40,7 +39,6 @@ In this example, it's set to 10.
 ---
 
 ### Tasks
-
 Create a list of user in the application and add those users info in the `resouces>users`
 csv file in the below format.
 
@@ -59,8 +57,6 @@ easabbir,Abbl_234
 ---
 
 ### API used in this projects are 
-
-
 Auth - CreateToken
 https://restful-booker.herokuapp.com/auth
 
