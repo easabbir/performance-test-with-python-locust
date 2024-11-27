@@ -88,3 +88,9 @@ English version
 https://youtu.be/DcTwbkUAiTo
 
 ---
+
+### Running in docker
+docker-compose up --scale worker=3
+
+---
+
