@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  master:
+    image: python:3.10-slim  # Use an official Python image
+    working_dir: /app        # Set the working directory inside the container
+    volumes:
+      - .:/app              # Mount your project directory into the container
+    ports:
+      - "8089:8089"         # Expose Locust web interface
+    command: >
+      sh -c "pip install --no-cache-dir locust requests &&
+              locust -f locustfile.py --master"
+    depends_on:
+      - worker
+
+  worker:
+    image: python:3.10-slim  # Use the same Python image
+    working_dir: /app        # Set the working directory inside the container
+    volumes:
+      - .:/app              # Mount your project directory into the container
+    command: >
+      sh -c "pip install --no-cache-dir locust requests &&
+              locust -f locustfile.py --worker --master-host=master"
