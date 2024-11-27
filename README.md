@@ -75,6 +75,7 @@ https://restful-booker.herokuapp.com/booking/:id
 Booking - DeleteBooking
 https://restful-booker.herokuapp.com/booking/1
 
+---
 
 ### Report Analysis on a different project which will help user to do analysis
 This video explains things to check for performance testing using locust and python. 
