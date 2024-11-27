@@ -1,24 +1,26 @@
 import json
 from utils import helper 
 
+baseUrl='https://restful-booker.herokuapp.com'
+
 class ApiRequests:
     
     def __init__(self, client):
         self.client = client
         
-    def login ( self, user_name, password):
-        api_url = 'https://restful-booker.herokuapp.com/auth'
+    def login ( self, user_name , password ):
+        api_url = f'{baseUrl}/auth'
         payload = {
             'username' : user_name,
             'password' : password
         }
         headers = { 'Content-Type': 'application/json', 'Accept': '*/*' }
-        response = self.client.post(api_url,json=payload, headers=headers, name= 'Login')
+        response = self.client.post( api_url, json=payload, headers=headers, name='Login')
         print ('login response code###', response.status_code)
         return json.loads(response.text)
         
-    def createBooking ( self, headers):
-        api_url= f'https://restful-booker.herokuapp.com/booking'
+    def createBooking ( self, headers ):
+        api_url= f'{baseUrl}/booking'
         payload = {
             "firstname": helper.generate_random_first_name(),
             "lastname": helper.generate_random_last_name(),
@@ -36,13 +38,13 @@ class ApiRequests:
         return json.loads(response.text)
         
     def getBooking (self, headers, booking_id):
-        api_url = f'https://restful-booker.herokuapp.com/booking/{booking_id}'
+        api_url = f'{baseUrl}/booking/{booking_id}'
         response = self.client.get(api_url, headers=headers, name='Get Booking')
         print('Get Booking:', response.status_code)
         print("Get Booking Response:", response.text)
         
     def updateBookingByPut (self, headers, booking_id):
-        api_url = f'https://restful-booker.herokuapp.com/booking/{booking_id}'
+        api_url = f'{baseUrl}/booking/{booking_id}'
         payload = {
             "firstname": helper.generate_random_first_name(),
             "lastname": helper.generate_random_last_name(),
@@ -59,7 +61,7 @@ class ApiRequests:
         print("Update Booking By PUT Response:", response.text)
         
     def updateBookingByPatch (self, headers, booking_id):
-        api_url = f'https://restful-booker.herokuapp.com/booking/{booking_id}'
+        api_url = f'{baseUrl}/booking/{booking_id}'
         payload = {
             "firstname": helper.generate_random_first_name(),
             "lastname": helper.generate_random_last_name()
@@ -69,7 +71,7 @@ class ApiRequests:
         print("Update Booking By PATCH Response:", response.text)
         
     def deleteBooking (self, headers, booking_id):
-        api_url= f'https://restful-booker.herokuapp.com/booking/{booking_id}'
+        api_url= f'{baseUrl}/booking/{booking_id}'
         response = self.client.delete(api_url, headers=headers, name='Delete Booking')
         print('Delete Booking:', response.status_code)
         print("Delete Booking:", response.text)
