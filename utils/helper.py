@@ -35,3 +35,8 @@ def generate_random_date(start_date="2000-01-01", end_date="2023-12-31"):
     
     # Return the date as a string in "YYYY-MM-DD" format
     return random_date.strftime("%Y-%m-%d")
+
+def generate_random_snacks_type():
+    snacksType = ['Breakfast', 'Lunch', 'Dinner', 'Breakfast,Lunch,Dinner']
+    snacksType = random.choice(snacksType)
+    return f"{snacksType}"

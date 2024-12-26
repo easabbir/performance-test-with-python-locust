@@ -30,7 +30,7 @@ class ApiRequests:
             "checkin": helper.generate_random_date(),
             "checkout": helper.generate_random_date()
             },
-            "additionalneeds": "Breakfast"
+            "additionalneeds": helper.generate_random_snacks_type()
         }
         response = self.client.post(api_url, json=payload, headers=headers, name='Create Booking')
         print('Create Booking response code:', response.status_code)
